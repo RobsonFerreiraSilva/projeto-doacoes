@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoia+ | Transforme solidariedade</title>
+    
+    <!-- Conexões Externas (Bootstrap e Ícones) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Conexão com o seu novo arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark fs-3" href="#">Apoia<span class="text-principal">+</span></a>
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#explorar">Explorar ONGs</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#como-funciona">Como funciona</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#sobre-nos">Sobre nós</a></li>
+                </ul>
+            </div>
+            <div class="d-flex gap-3" id="area-botoes-nav">
+                <button class="btn btn-contorno" data-bs-toggle="modal" data-bs-target="#authModal">Entrar</button>
+                <button class="btn btn-principal" onclick="abrirModalDoacao('Plataforma Apoia+')"><i class="bi bi-suit-heart-fill me-2"></i>Quero doar</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Principal -->
+    <div class="container mt-5 pt-3 mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5">
+                <h1 class="display-4 fw-bolder mb-3" style="color: var(--cor-texto-escuro);">Transforme solidariedade em impacto</h1>
+                <p class="fs-5 text-secondary mb-4">Apoie causas que mudam vidas.</p>
+                <div class="d-flex gap-3 align-items-center">
+                    <a href="#explorar" class="btn btn-principal px-4 py-3 text-decoration-none"><i class="bi bi-search me-2"></i>Encontrar uma causa</a>
+                    <a href="#como-funciona" class="text-decoration-none text-principal fw-medium"><i class="bi bi-play-circle fs-4 align-middle me-2"></i>Como funciona</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Voluntários" class="hero-img shadow">
+            </div>
+        </div>
+    </div>
+
+    <!-- Como Funciona -->
+    <div class="bg-white py-5 shadow-sm" id="como-funciona">
+        <div class="container my-5">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold" style="color: var(--cor-texto-escuro);">Como a Apoia+ funciona</h3>
+                <p class="text-muted fs-5">Três passos simples para transformar a realidade de quem mais precisa.</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="icone-passo"><i class="bi bi-search"></i></div>
+                    <h5 class="fw-bold text-dark">1. Escolha uma causa</h5>
+                    <p class="text-muted small px-3">Explore instituições validadas na sua região e encontre projetos que tocam o seu coração.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="icone-passo"><i class="bi bi-phone"></i></div>
+                    <h5 class="fw-bold text-dark">2. Doe com segurança</h5>
+                    <p class="text-muted small px-3">Faça doações financeiras via PIX direto para a ONG ou agende a entrega de itens físicos.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="icone-passo"><i class="bi bi-emoji-smile"></i></div>
+                    <h5 class="fw-bold text-dark">3. Transforme vidas</h5>
+                    <p class="text-muted small px-3">As instituições recebem o seu apoio e revertem em impacto real para a comunidade local.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ONGs Dinâmicas -->
+    <div class="container mb-5 mt-5 pt-4" id="explorar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold" style="color: var(--cor-texto-escuro);">Escolha uma causa para apoiar</h3>
+        </div>
+        <div class="row g-4" id="lista-ongs">
+            <div class="text-center w-100 py-5">
+                <div class="spinner-border text-principal" role="status"></div>
+                <p class="mt-2 text-muted">Carregando causas...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé / Sobre Nós -->
+    <footer class="bg-dark text-white py-5 mt-5" id="sobre-nos">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="fw-bold mb-1">Apoia<span class="text-principal">+</span></h2>
+                    <p class="text-secondary small mt-3 pe-md-5">Um projeto desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas da UniCarioca.</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#explorar" class="text-secondary text-decoration-none small">ONGs Parceiras</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none small" data-bs-toggle="modal" data-bs-target="#authModal">Área da Instituição</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Contato</h6>
+                    <p class="text-secondary small mb-1"><i class="bi bi-envelope me-2"></i>contato@apoiamais.org.br</p>
+                    <p class="text-secondary small"><i class="bi bi-geo-alt me-2"></i>Rio de Janeiro, RJ</p>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-3">
+            <div class="text-center text-secondary small">&copy; 2026 Apoia+. Projeto acadêmico (MVP).</div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LOGIN / CADASTRO -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header border-0 pb-0 justify-content-center position-relative">
+                    <button type="button" class="btn-close position-absolute end-0 top-0 m-3 z-3" data-bs-dismiss="modal"></button>
+                    <ul class="nav nav-tabs w-100 mt-2" id="authTabs" role="tablist">
+                        <li class="nav-item w-50 text-center"><button class="nav-link active w-100 fs-5" data-bs-toggle="tab" data-bs-target="#pane-login" type="button">Entrar</button></li>
+                        <li class="nav-item w-50 text-center"><button class="nav-link w-100 fs-5" data-bs-toggle="tab" data-bs-target="#pane-cadastro" type="button">Cadastrar</button></li>
+                    </ul>
+                </div>
+                <div class="modal-body p-4 pt-3">
+                    <div id="modal-alerta"></div>
+                    <div class="tab-content">
+                        <!-- Aba Login -->
+                        <div class="tab-pane fade show active" id="pane-login">
+                            <form id="form-login">
+                                <div class="mb-3"><label class="form-label text-muted small fw-bold">E-MAIL</label><input type="email" class="form-control" id="login-email" required></div>
+                                <div class="mb-4"><label class="form-label text-muted small fw-bold">SENHA</label><input type="password" class="form-control" id="login-senha" required></div>
+                                <button type="submit" class="btn btn-principal w-100 py-2">Acessar Painel</button>
+                            </form>
+                        </div>
+                        <!-- Aba Cadastro -->
+                        <div class="tab-pane fade" id="pane-cadastro">
+                            <form id="form-cadastro">
+                                <div class="mb-3"><label class="form-label text-muted small fw-bold">NOME DA INSTITUIÇÃO</label><input type="text" class="form-control" id="cad-nome" required></div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3"><label class="form-label text-muted small fw-bold">CIDADE</label><input type="text" class="form-control" id="cad-cidade" required></div>
+                                    <div class="col-md-6 mb-3"><label class="form-label text-muted small fw-bold">BAIRRO</label><input type="text" class="form-control" id="cad-bairro" required></div>
+                                </div>
+                                <div class="mb-3"><label class="form-label text-muted small fw-bold">E-MAIL</label><input type="email" class="form-control" id="cad-email" required></div>
+                                <div class="mb-4"><label class="form-label text-muted small fw-bold">CRIE UMA SENHA</label><input type="password" class="form-control" id="cad-senha" required></div>
+                                <button type="submit" class="btn btn-principal w-100 py-2">Criar Conta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE DOAÇÃO -->
+    <div class="modal fade" id="doacaoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header border-0 pb-0 justify-content-center position-relative">
+                    <button type="button" class="btn-close position-absolute end-0 top-0 m-3 z-3" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title fw-bold text-dark mt-3" id="titulo-doacao">Apoiar Causa</h4>
+                </div>
+                <div class="modal-body p-4 pt-2 text-center">
+                    <p class="text-muted mb-4">Escolha como você deseja ajudar hoje.</p>
+                    <div id="passo-selecao">
+                        <label class="form-label text-muted small fw-bold text-start w-100">VALOR DA DOAÇÃO</label>
+                        <div class="d-flex justify-content-between mb-2">
+                            <button type="button" class="btn btn-valor ativo" onclick="destacarBotaoValor(this)">R$ 20</button>
+                            <button type="button" class="btn btn-valor" onclick="destacarBotaoValor(this)">R$ 50</button>
+                            <button type="button" class="btn btn-valor" onclick="destacarBotaoValor(this)">R$ 100</button>
+                        </div>
+                        <div class="input-group mb-4 mt-2">
+                            <span class="input-group-text bg-light border-end-0 fw-bold text-muted">R$</span>
+                            <input type="number" class="form-control border-start-0" id="valor-personalizado" placeholder="Ou digite outro valor" min="1" onfocus="limparBotoesValor()">
+                        </div>
+                        <label class="form-label text-muted small fw-bold text-start w-100">OU DOE ITENS FÍSICOS</label>
+                        <select class="form-select mb-4">
+                            <option>Apenas valor em dinheiro</option>
+                            <option>1 Cesta Básica (Aprox. R$ 75)</option>
+                            <option>Kits de Higiene Pessoal</option>
+                            <option>Roupas de Frio (Agendar coleta)</option>
+                        </select>
+                        <button type="button" class="btn btn-principal w-100 py-2 fs-5" onclick="gerarPix()">
+                            <i class="bi bi-qr-code-scan me-2"></i> Gerar PIX Copia e Cola
+                        </button>
+                    </div>
+                    <div id="passo-sucesso" class="d-none py-3">
+                        <i class="bi bi-check-circle-fill text-success mb-2" style="font-size: 3rem;"></i>
+                        <h4 class="fw-bold mt-2">Pronto para doar!</h4>
+                        <p class="text-muted small mb-4">Abra o app do seu banco, escolha "PIX Copia e Cola" e cole o código abaixo.</p>
+                        <div class="bg-light p-3 rounded border text-break mb-4 font-monospace small user-select-all text-start" style="color: var(--cor-principal);">
+                            00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913APOIAMais6009SAOPAULO62070503***6304E2B1
+                        </div>
+                        <button type="button" class="btn btn-contorno w-100" data-bs-dismiss="modal">Já realizei o pagamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conexão com o Bootstrap (JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Conexão com o seu novo arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
